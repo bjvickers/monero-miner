@@ -1,0 +1,15 @@
+{
+  "name": "ch_pass1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "debug": "./node_modules/.bin/nodemon ./src/bin/startup.js",
+    "start": "node ./src/bin/startup.js"
+  },
+  "dependencies": {
+    "coin-hive": "1.9.4"
+  },
+  "devDependencies": {
+    "nodemon": "1.12.1"
+  }
+}

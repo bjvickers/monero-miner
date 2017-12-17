@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+
+  concha_user:
+    container_name: ch_pass1
+    build: .
+    volumes:
+      # Make the following directories available to docker so that changes made on the host
+      # are immediately available inside the docker container.
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+    command: npm run debug
+    ports:
+      # Expose port to host machine for debugging
+      - 80:80
