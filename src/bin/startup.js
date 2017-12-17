@@ -1,19 +1,22 @@
 'use strict'
 
+const log = require('../services/log')
 const CoinHive = require('coin-hive');
 
 (async () => {
 
-  // Create miner
-  const miner = await CoinHive('ZM4gjqQ0jh0jbZ3tZDByOXAjyotDbo00'); // CoinHive's Site Key
+  log.info({}, 'Creating miner...')
+  const miner = await CoinHive('I11K3gMRbeA1AM1ndWV2ZaMKPTvvLfzj');
+  log.info({}, 'Miner created.')
 
-  // Start miner
+  log.info({}, 'Starting miner...')
   await miner.start();
+  log.info({}, 'Miner started.')
 
   // Listen on events
-  miner.on('found', () => console.log('Found!'))
-  miner.on('accepted', () => console.log('Accepted!'))
-  miner.on('update', data => console.log(`
+  miner.on('found', () => log.info({}, 'Found!'))
+  miner.on('accepted', () => log.info({}, 'Accepted!'))
+  miner.on('update', data => log.info({}, `
     Hashes per second: ${data.hashesPerSecond}
     Total hashes: ${data.totalHashes}
     Accepted hashes: ${data.acceptedHashes}
