@@ -1,13 +1,10 @@
-FROM ubuntu:17.10
+FROM node:9.3.0
 
 RUN apt-get -y update
-RUN apt-get install -y curl
+RUN apt-get -y install build-essential
+RUN apt-get -y install wget
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -yq nodejs build-essential
-
-# @todo
-# Reuse curl here
-RUN apt-get install -y wget
+## RUN apk update && apk add ca-certificates wget && update-ca-certificates
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
 

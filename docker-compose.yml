@@ -2,7 +2,7 @@ version: "3"
 
 services:
 
-  concha_user:
+  ch_pass1:
     container_name: ch_pass1
     build: .
     volumes:
@@ -10,7 +10,7 @@ services:
       # are immediately available inside the docker container.
       - ./src:/app/src
       - ./package.json:/app/package.json
-    command: npm run debug
+    command: npm start
     ports:
       # Expose port to host machine for debugging
       - 80:80
