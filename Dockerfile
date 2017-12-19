@@ -21,3 +21,6 @@ RUN npm cache clean --force --silent
 COPY ./src /app/src
 
 EXPOSE 80
+
+CMD [ "npm", "start" ]
+
