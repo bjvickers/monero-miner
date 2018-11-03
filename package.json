@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "bunyan": "1.8.12",
-    "coin-hive": "1.9.4"
+    "coin-hive": "1.10.0"
   },
   "devDependencies": {
-    "nodemon": "1.12.1"
+    "nodemon": "1.18.5"
   }
 }
